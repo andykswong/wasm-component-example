@@ -1,0 +1,14 @@
+package component:hello;
+
+// An example world for the component to target.
+world example {
+    import host: interface {
+        // log from host
+        log: func(param: string);
+    }
+
+    // return "guest: Hello, World!"
+    export hello-world: func() -> string;
+
+    export log-hello: func();
+}

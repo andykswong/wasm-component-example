@@ -1,0 +1,19 @@
+{
+  "name": "wasm-component-example",
+  "type": "module",
+  "private": true,
+  "main": "./index.js",
+  "dependencies": {
+    "@bytecodealliance/preview2-shim": "^0.15"
+  },
+  "devDependencies": {
+    "@bytecodealliance/jco": "^1.0",
+    "binaryen": "^116.0"
+  },
+  "scripts": {
+    "build:rust": "cargo component build --release",
+    "build:wasm": "jco transpile target/wasm32-wasi/release/hello.wasm --map host=../host.js --optimize -o ./dist",
+    "build": "npm run build:rust && npm run build:wasm",
+    "start": "node index.js"
+  }
+}

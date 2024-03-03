@@ -12,3 +12,18 @@ Cargo.lock
 
 # MSVC Windows builds of rustc generate these, which store debugging information
 *.pdb
+
+# OS generated files
+.DS_Store
+.DS_Store?
+
+# npm dependency directories
+node_modules/
+
+# npm output folders
+coverage/
+docs/
+dist/
+
+# wit-bindgen generated bindings
+/src/bindings.rs
